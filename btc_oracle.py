@@ -22,8 +22,12 @@ Price = sum(volume * price) at each exchange / sum (volume at each exchange)
 
 #Bitfinex
 
-import requests,json
+import requests,json, time
+import pandas as pd
+from Naked.toolshed.shell import execute_js, muterun_js, run_js
 
+
+date = time.strftime("%Y%m%d")
 
 def Bitfinex():
 	url = "https://api.bitfinex.com/v1/pubticker/BTCUSD"
@@ -88,10 +92,36 @@ def CalculatePrice():
 			denominator += float(i[1])
 			print (i,i[0],i[1])
 	price = numerator / denominator
+	price_format = int(price*1000)
+	t1 = time.strftime("%H%M%S")
+	title = 'btc_'+date
+	tlist = ['Bitfinex','GDAX','BITSTAMP','Poloniex','Gemini']
+	df = pd.DataFrame(columns=('time','date','price'))
+	df.loc[1] = pd.Series({'time':t1, 'date':date, 'price':price_format})
+	x=0
+	for i in exlist:
+		print (i)
+		df[tlist[x]]=i[0]
+		x +=1
+	print(df)
+	df.to_csv("C:/Code/Company/Oracle/Data/"+title+".csv")
+
 	print(price)
-	return (price)
+	print(price_format)
 
 
-def DeploytoOracle(key_date,product,price):
-	pass
+def DeploytoOracle():
+	response = run_js('oracle.js')
+	print(response)
+
+
 CalculatePrice()
+DeploytoOracle()
+
+'''
+
+Store in csv file
+Date, Time, Each value, then final value
+'''
+print ('BTCUSD')
+
