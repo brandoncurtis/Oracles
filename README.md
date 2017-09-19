@@ -14,15 +14,15 @@ Methodology
 
 - Pull 1600 EST prices from various exchanges
 
--Drop highest and lowest value
+- Drop highest and lowest value
 
 - Use 24 hour volume weighted average to then calculate the price
 
            Price = sum(volume * price)  / sum (volume)
            
--Multiply price by 1000 since EVM does not support decimal places
+- Multiply price by 1000 since EVM does not support decimal places
 
--Push to Oracle contract on Ethereum blockchain
+- Push to Oracle contract on Ethereum blockchain
 
 
 
@@ -31,13 +31,9 @@ Exchange List
 BTC/USD 
 
            Bitfinex
-
            GDAX
-
            Bitstamp
-
            Poloniex
-
            Gemini
 
 
@@ -45,12 +41,8 @@ BTC/USD
 ETH/USD
 
            Bitfinex
-
            GDAX
-
            Kraken
-
            Poloniex
-
            Gemini
 
