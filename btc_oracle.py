@@ -1,6 +1,5 @@
 '''Methodology
-Price is volume weighted average of last hour (1500-1600 EST) of five select exchanges
-Exchange list is examined and updated at beginning of every month
+Exchange list is examined every month
 Current List:
 Bitfinex
 GDAX
@@ -9,8 +8,8 @@ Poloniex
 Gemini
 
 
-The oracle is currently updated on a one hour delay(1700 EST)
-	-as testing continues this will go down
+The oracle is currently updated at 1600 EST, however manual intervention may delay this from an exact time push
+	-as testing continues and API's prove reliable, manual checking will go down
 	-this allows multiple or manual attempts if API is non-responsive
 
 Top and Bottom exchanges are dropped from calculation
@@ -107,19 +106,5 @@ def CalculatePrice():
 	print(price)
 	print(price_format)
 
-
-def DeploytoOracle():
-	response = run_js('btcoracle.js')
-	print(response)
-
-
 CalculatePrice()
-#DeploytoOracle()
-
-'''
-
-Store in csv file
-Date, Time, Each value, then final value
-'''
-print ('BTCUSD')
 
