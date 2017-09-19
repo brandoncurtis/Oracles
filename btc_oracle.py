@@ -9,8 +9,8 @@ Poloniex
 Gemini
 
 
-The oracle is currently updated around 16:00 EST daily, howevwer manual checks take place if an API call fails or price movements are significant
-	-as testing continues, all manual intervention will hopefully be eliminated
+The oracle is currently updated on a one hour delay(1700 EST)
+	-as testing continues this will go down
 	-this allows multiple or manual attempts if API is non-responsive
 
 Top and Bottom exchanges are dropped from calculation
@@ -81,8 +81,6 @@ def CalculatePrice():
 	gem = Gemini()
 	exlist = (bfx,gdax,bstmp,polx,gem)
 	prices = sorted([bfx[0],gdax[0],bstmp[0],polx[0],gem[0]])
-	print(prices)
-	print(prices[1:4])
 	mid3 =prices[1:4]
 	numerator = 0
 	denominator = 0
@@ -111,9 +109,17 @@ def CalculatePrice():
 
 
 def DeploytoOracle():
-	response = run_js('oracle.js')
+	response = run_js('btcoracle.js')
 	print(response)
 
 
 CalculatePrice()
-DeploytoOracle()
+#DeploytoOracle()
+
+'''
+
+Store in csv file
+Date, Time, Each value, then final value
+'''
+print ('BTCUSD')
+

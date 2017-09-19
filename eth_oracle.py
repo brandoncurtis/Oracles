@@ -23,7 +23,9 @@ Price = sum(volume * price) at each exchange / sum (volume at each exchange)
 #Bitfinex
 import requests,json, time
 import pandas as pd
+from Naked.toolshed.shell import execute_js, muterun_js, run_js
 
+date = time.strftime("%Y%m%d")
 
 
 def Bitfinex():
@@ -87,22 +89,31 @@ def CalculatePrice():
 		if i[0] in mid3:
 			numerator += (float(i[0])*float(i[1]))
 			denominator += float(i[1])
+			print (i,i[0],i[1])
 	price = numerator / denominator
+	price_format = int(price*1000)
 	t1 = time.strftime("%H%M%S")
-	d1 = time.strftime("%d%m%Y")
-	title = 'eth_'+t1 +'_'+d1
+	title = 'eth_'+date
 	tlist = ['Bitfinex','GDAX','Kraken','Poloniex','Gemini']
 	df = pd.DataFrame(columns=('time','date','price'))
-	df.loc[1] = pd.Series({'time':t1, 'date':d1, 'price':price})
+	df.loc[1] = pd.Series({'time':t1, 'date':date, 'price':price_format})
 	x=0
 	for i in exlist:
+		print (i)
 		df[tlist[x]]=i[0]
 		x +=1
 	print(df)
 	df.to_csv("C:/Code/Company/Oracle/Data/"+title+".csv")
-	return (price)
+
+	print(price)
+	print(price_format)
+
+def DeploytoOracle():
+	response = run_js('ethoracle.js')
+	print(response)
 
 
-def DeploytoOracle(key_date,product,price):
-	pass
 CalculatePrice()
+#DeploytoOracle()
+
+print ('ETHUSD')
