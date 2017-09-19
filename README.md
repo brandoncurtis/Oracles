@@ -2,8 +2,6 @@
 
 By design, the Ethereum blockchain is unable to communicate with data and programs outside of the Ethereum Virtual Machine.  In order to get data from an outside source, such as pricing data from an exchange, an 'Oracle' is needed to put the data onto the Ethereum blockchain.  DDA is currently acting as the oracle for DDA swaps and uses a robust methodology for calculating End-of-Day (EOD) prices for Ether and Bitcoin.
 
-DDA can also provide private oracles for custom swaps and plans to expand the list of supported currencies. 
-
 
 Current Oracle Addresses - Ropsten
 
