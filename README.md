@@ -6,6 +6,7 @@ DDA can also provide private oracles for custom swaps and plans to expand the li
 
 
 Current Oracle Addresses - Ropsten
+
     ETH/USD -0xc78fe159230e4bab28c3f7cba53967e0be3ee48e
     BTC/USD - 0x30346e7efc7b892c29989ce4374fc1af55acc8c3
 
@@ -28,17 +29,28 @@ Methodology
 Exchange List
 
 BTC/USD 
-        Bitfinex
-        GDAX
-        Bitstamp
-        Poloniex
-        Gemini
+
+           Bitfinex
+
+           GDAX
+
+           Bitstamp
+
+           Poloniex
+
+           Gemini
 
 
 
 ETH/USD
-        Bitfinex
-        GDAX
-        Kraken
-        Poloniex
-        Gemini
+
+           Bitfinex
+
+           GDAX
+
+           Kraken
+
+           Poloniex
+
+           Gemini
+
