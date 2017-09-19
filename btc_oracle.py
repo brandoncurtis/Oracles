@@ -9,8 +9,8 @@ Poloniex
 Gemini
 
 
-The oracle is currently updated on a one hour delay(1700 EST)
-	-as testing continues this will go down
+The oracle is currently updated around 16:00 EST daily, howevwer manual checks take place if an API call fails or price movements are significant
+	-as testing continues, all manual intervention will hopefully be eliminated
 	-this allows multiple or manual attempts if API is non-responsive
 
 Top and Bottom exchanges are dropped from calculation
@@ -117,11 +117,3 @@ def DeploytoOracle():
 
 CalculatePrice()
 DeploytoOracle()
-
-'''
-
-Store in csv file
-Date, Time, Each value, then final value
-'''
-print ('BTCUSD')
-
