@@ -24,6 +24,13 @@ from Naked.toolshed.shell import execute_js, muterun_js, run_js
 
 date = time.strftime("%Y%m%d")
 
+def Bittrex():
+	url = "https://bittrex.com/api/v1.1/public/getmarketsummary?market=USDT-eth"
+	response = requests.request("GET", url)
+	price = response.json()['result'][0]['Last']
+	volume = response.json()['result'][0]['Volume']
+	print(price,volume)
+	return [price,volume]
 
 def Bitfinex():
 	url = "https://api.bitfinex.com/v1/pubticker/ETHUSD"
@@ -106,4 +113,5 @@ def CalculatePrice():
 	print(price_format)
 
 CalculatePrice()
+
 
