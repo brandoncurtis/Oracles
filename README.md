@@ -5,8 +5,8 @@ By design, the Ethereum blockchain is unable to communicate with data and progra
 
 Current Oracle Addresses - Ropsten   (Currently in Beta)
 
-    ETH/USD -0x1f71046028c203ad21b41d2e1c44c3bf31e73ddc 
-    BTC/USD - 0x1bf279800e6334b2d9a3862996a0767bfde5eaf4
+    ETH/USD -0x8d0b9f591dabcf866a07f1d11012cd7e7a3e1d9b
+    BTC/USD - 0x0136c266e3a32c0f493a66556565014d8a581552
 
 
 Solidity Code - https://github.com/DecentralizedDerivatives/Deriveth/blob/master/Oracle.sol
