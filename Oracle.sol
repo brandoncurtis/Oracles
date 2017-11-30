@@ -32,4 +32,10 @@ contract Oracle {
     DocumentStored(_key, _value);
   }
 
+    function RetrieveData(uint _date) public constant returns (uint data) {
+    uint value = oracle_values[_date];
+    return value;
+  }
+
+
 }
